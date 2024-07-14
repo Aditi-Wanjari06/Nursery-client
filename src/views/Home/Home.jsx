@@ -3,13 +3,20 @@ import PlantCard from "../../components/PlantCard/PlantCard"
 import { useState } from "react"
 import { useEffect } from "react"
 import axios from "axios"
+import toast, { Toaster } from "react-hot-toast"
 
 function Home() {
 
   const [plants, setPlants] = useState([])
 
   const loadPlants = async () => {
+    toast.loading("Loading Plants...")
     const response = await axios.get("http://localhost:8000/plants")
+
+    toast.dismiss()
+
+    toast.success("Plants loaded successfully..")
+
     setPlants(response.data.data)
   }
 
@@ -44,6 +51,7 @@ function Home() {
           )
         })
       }
+      <Toaster />
     </div>
   )
 }

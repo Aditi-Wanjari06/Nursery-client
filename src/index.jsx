@@ -1,6 +1,7 @@
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import Home from './views/Home/Home'
+import { Toaster } from 'react-hot-toast'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
@@ -15,4 +16,7 @@ element: <Home />
     element: <h1>404 Not Found</h1>
   }
 ])
-root.render(<RouterProvider router = {router} />)
+root.render(<div>
+  <RouterProvider router = {router} />
+  <Toaster />
+  </div>)
