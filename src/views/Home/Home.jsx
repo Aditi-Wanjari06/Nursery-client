@@ -13,7 +13,7 @@ function Home() {
     toast.loading("Loading Plants...")
     const response = await axios.get(`${process.env.REACT_APP_API_URL}/plants`)
 
-    toast.dismiss()
+   toast.dismiss()
 
     toast.success("Plants loaded successfully..")
 
