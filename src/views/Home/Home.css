@@ -1,7 +1,12 @@
 .btn-add{
-    height: 50px;
+    height: 70px;
     position: fixed;
     right: 10px;
     bottom: 10px;
     z-index: 100 !important;
+}
+
+.heading-plants{
+    text-align: center;
+    font-size: 40px;
 }

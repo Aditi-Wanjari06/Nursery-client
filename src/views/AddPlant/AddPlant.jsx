@@ -41,8 +41,9 @@ function AddPlant() {
   }
 
   return (
-    <div>
-      <h1>AddPlant</h1>
+    
+    <div className="input-container">
+      <h1 className="heading-plants">AddPlant</h1>
 
       <form>
         <input
