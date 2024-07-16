@@ -4,6 +4,8 @@ import { useState } from "react"
 import { useEffect } from "react"
 import axios from "axios"
 import toast, { Toaster } from "react-hot-toast"
+import ImgAdd from "./add.png"
+import { Link } from "react-router-dom"
 
 function Home() {
 
@@ -13,7 +15,7 @@ function Home() {
     toast.loading("Loading Plants...")
     const response = await axios.get(`${process.env.REACT_APP_API_URL}/plants`)
 
-   toast.dismiss()
+    toast.dismiss()
 
     toast.success("Plants loaded successfully..")
 
@@ -47,11 +49,16 @@ function Home() {
             image={image}
             price={price}
             description={description}
+            loadPlants = {loadPlants}
           />
+          
           )
         })
       }
       <Toaster />
+      <Link to="/add" >
+        <img src={ImgAdd} className="btn-add" />
+      </Link>
     </div>
   )
 }
